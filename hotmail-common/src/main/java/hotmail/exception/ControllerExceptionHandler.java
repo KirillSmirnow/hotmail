@@ -18,6 +18,6 @@ public class ControllerExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ExceptionMessage handleOtherException(Exception e) {
-        return new ExceptionMessage("An error has occurred", e.getMessage());
+        return ExceptionMessage.unknown(e);
     }
 }
