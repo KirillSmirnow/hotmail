@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface MailService {
 
     @PostMapping("/letters")
-    SendStatus send(@RequestBody Letter letter);
+    void send(@RequestBody Letter letter);
 }

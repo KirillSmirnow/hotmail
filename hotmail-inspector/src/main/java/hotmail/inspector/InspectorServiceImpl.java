@@ -15,7 +15,7 @@ public class InspectorServiceImpl implements InspectorService {
 
     @Override
     public boolean isAllowedToDeliver(Letter letter) {
-        boolean forbidden = containsBadWord(letter.getUsername()) || containsBadWord(letter.getText());
+        boolean forbidden = letter.getFieldsToCheck().stream().anyMatch(this::containsBadWord);
         log.info("Inspecting {}. Is forbidden = {}", letter, forbidden);
         return !forbidden;
     }

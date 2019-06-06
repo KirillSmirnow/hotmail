@@ -1,1 +1,2 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=hotmail.FeignsAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=hotmail.FeignsAutoConfiguration,\
+  hotmail.exception.ExceptionHandlingAutoConfiguration
