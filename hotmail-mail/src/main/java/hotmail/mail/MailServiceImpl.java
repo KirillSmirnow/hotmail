@@ -3,7 +3,6 @@ package hotmail.mail;
 import hotmail.inspector.InspectorService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
@@ -13,7 +12,6 @@ public class MailServiceImpl implements MailService {
 
     private final InspectorService inspectorService;
 
-    @Async
     @Override
     public void send(Letter letter) {
         boolean allowedToDeliver = inspectorService.isAllowedToDeliver(letter);

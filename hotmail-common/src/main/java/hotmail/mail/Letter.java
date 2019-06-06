@@ -1,5 +1,6 @@
 package hotmail.mail;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
@@ -21,6 +22,7 @@ public class Letter {
     @NotBlank
     private final String text;
 
+    @JsonIgnore
     public List<String> getFieldsToCheck() {
         return asList(from, to, text);
     }
