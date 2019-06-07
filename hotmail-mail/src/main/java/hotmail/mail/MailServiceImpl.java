@@ -1,5 +1,6 @@
 package hotmail.mail;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import hotmail.inspector.InspectorService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,6 +18,7 @@ public class MailServiceImpl implements MailService {
     private final InspectorService inspectorService;
     private final LetterRepository letterRepository;
 
+    @HystrixCommand
     @Override
     public void send(Letter letter) {
         boolean allowedToDeliver = inspectorService.isAllowedToDeliver(letter);
